@@ -7,5 +7,6 @@
 //
 //= require jquery-3.5.1.min
 //= require popper.min
+//= require ocb.js
 //= require bootstrap
 //= require_self
