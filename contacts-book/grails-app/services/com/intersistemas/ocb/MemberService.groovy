@@ -1,31 +1,34 @@
 package com.intersistemas.ocb
 
+import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 
 class MemberService {
 
+    @Transactional
     def save(GrailsParameterMap params) {
         Member member = new Member(params)
-        def response = AppUtil.saveResponse(isSucess: false, member)
+        def response = AppUtil.saveResponse(false, member)
 
         if (member.validate()) {
             member.save(flush: true)
             if (!member.hasErrors()) {
-                response.isSucess = true
+                response.isSuccess = true
             }
         }
 
         return response
     }
 
+    @Transactional
     def update (Member member, GrailsParameterMap params) {
         member.properties = params
-        def response = AppUtil.saveResponse(isSucess: false, member)
+        def response = AppUtil.saveResponse(false, member)
 
         if (member.validate()) {
             member.save(flush: true) 
             if (!member.hasErrors()) {
-                response.isSucess = true
+                response.isSuccess = true
             }
         }
 
@@ -37,20 +40,23 @@ class MemberService {
         return Member.get(id)
     }
 
+    @Transactional
     def list(GrailsParameterMap params) {
-        params.max = pams.max ?: GlobalConfig.itemsPerPage()
+        params.max = params.max ?: GlobalConfig.itemsPerPage()
         List<Member> memberList = Member.createCriteria().list(params) {
             if (params?.colName && params?.colValue) {
                 like(params.colName, "%" + params.colValue + "%")
             }
             if (!params.sort) {
-                order(propertyName: "id", direction: "desc")
+                order("id", "desc")
             }
         }
 
-        return [list: memberList, count: memberList.size()]
+        return [list: memberList, count: Member.count()]
     }
 
+
+    @Transactional
     def delete(Member member) {
         try {
             member.delete(flush: true)

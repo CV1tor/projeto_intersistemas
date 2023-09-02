@@ -5,8 +5,8 @@ import org.grails.web.util.WebUtils
 
 class AppUtil {
   
-  static saveResponse(Boolean isSucess, def model) {
-    return [isSucess: isSucess, model: model]
+  static saveResponse(Boolean isSuccess, def model) {
+    return [isSuccess: isSuccess, model: model]
   }
 
   static getAppSession() {
@@ -14,6 +14,6 @@ class AppUtil {
   }
 
   static infoMessage(String message, boolean status = true) {
-    return [info: message, sucess: status]
+    return [info: message, success: status]
   }
 }
