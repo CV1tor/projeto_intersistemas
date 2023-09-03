@@ -10,4 +10,5 @@
 *= require bootstrap
 *= require style
 *= require_self
+*= require jquery-confirm.min
 */

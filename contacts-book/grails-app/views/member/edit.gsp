@@ -9,7 +9,7 @@
 
     <div class="card-body">
         <g:form controller="member" action="update" >
-
+            <g:hiddenField name="id" value="${member.id}"/>
             <g:render template="form" model="[edit: 'yes']"/>
             <div class="row ">
                 <div class="m-3">
