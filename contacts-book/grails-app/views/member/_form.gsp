@@ -19,7 +19,7 @@
 
 
 
-<g:if test="${!edit && !(member?.memberType == GlobalConfig.USER_TYPE.ADMIN)}">
+<g:if test="${!edit )}">
     <div class="mb-3">
         <label class="form-label" for="password"><g:message code="password" /> * </label>
         <g:passwordField  name="password" class="form-control" value="${member?.password}" placeholder="Enter Password..." autocomplete="off"/>
