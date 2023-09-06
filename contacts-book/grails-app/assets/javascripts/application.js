@@ -13,3 +13,4 @@
 //= require_self
 //= require jquery-confirm.min.js
 //= require ocb.init.js
+//= require ocb.ajax.js

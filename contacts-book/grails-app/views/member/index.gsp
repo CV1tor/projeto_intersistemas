@@ -38,8 +38,8 @@
                         <td>${info?.firstName}</td>
                         <td>${info?.lastName}</td>
                         <td>${info?.email}</td>
-                        <td>
-                            <div class="btn-group">
+                        <td class="member-actions">
+                            <div class="btn-group ">
                                 <g:link class ="btn btn-primary" controller="member" action="details" id="${info.id}"><i class="fa-solid fa-eye"></i></g:link>
                                 <g:link class ="btn btn-primary" controller="member" action="edit" id="${info.id}"><i class="fa-solid fa-pen-to-square"></i></g:link>
                                 <g:link class ="btn btn-danger delete-confirmation" controller="member" action="delete" id="${info.id}"><i class="fa-solid fa-trash"></i></g:link>

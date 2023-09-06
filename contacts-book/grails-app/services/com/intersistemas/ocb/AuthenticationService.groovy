@@ -38,6 +38,7 @@ class AuthenticationService {
         if (member.lastName == null) {
             return "${member.firstName}"
         }
+
         return "${member.firstName} ${member.lastName}"
     }
 
