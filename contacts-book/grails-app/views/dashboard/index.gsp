@@ -6,7 +6,7 @@
 </head>
 <body>
     <main>
-        <h1> Welcome, stranger!</h1>
+        <h1> Welcome to the Online Contacts Book!</h1>
     </main>
 
 </body>

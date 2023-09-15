@@ -8,7 +8,7 @@
     </div>
 
     <div class="card-body">
-        <g:form controller="contact" action="update" >
+        <g:form controller="contact" action="update" enctype="multipart/form-data" >
             <g:hiddenField name="id" value="${contact.id}"/>
             <g:render template="form"/>
             <div class="row g-3">

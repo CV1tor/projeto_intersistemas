@@ -32,7 +32,7 @@
                         </g:if>
                 
                         <g:if test="${contact.contactDetails}">
-                        <div class="ml-3 d-flex">
+                        <div class="ml-3 d-flex flex-wrap">
                             <g:each in="${contact.contactDetails}" var="details">
                                 <div >
                                     <div class="card ml-3" >

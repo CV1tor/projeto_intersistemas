@@ -18,7 +18,7 @@
     <UIHelper:contactGroup value="${contact?.contactGroup*.id}" />
 </div>
 
-<div class="details-panel">
+<div class="details-panel mb-3">
     <g:include controller="contactDetails" action="create" id="${contact?.id}" />
 </div>
 
